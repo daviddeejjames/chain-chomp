@@ -1,10 +1,9 @@
 :root {
-  --grass: #01ac0d;
-  --sky: #4295ff;
   --black: #111;
-  --grey: #383838;
   --white: #fff;
-
+  --grey: #383838;
+  --sky: #4295ff;
+  --grass: #01ac0d;
   --wood: #4f1708;
   --wood-top: #c48620;
   --chain: #65678b;
@@ -13,7 +12,6 @@
   --tooth: #efecf7;
   --chomp-size: 300px;
   --eye-separation: 22px;
-
 }
 
 body {
