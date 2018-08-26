@@ -8,6 +8,7 @@
   --wood: #4f1708;
   --wood-top: #c48620;
   --chain: #65678b;
+  --chain-highlight: #e8e7e7;
   --mouth: #8b0502;
   --tooth: #efecf7;
   --chomp-size: 300px;
@@ -32,9 +33,9 @@ body {
   position: relative;
   width: var(--chomp-size);
   height: var(--chomp-size);
-  animation: bounce 0.5s cubic-bezier(.5,.05,1,.5);
-  animation-direction:alternate;
-  animation-iteration-count:infinite;
+  animation: chomp-bounce 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 .ground {
@@ -86,6 +87,44 @@ body {
   content: '';
 }
 
+.chain-ball {
+  position: absolute;
+  top: 54px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--chain);
+  background: radial-gradient(circle at 2px 2px, var(--chain-highlight), var(--chain));
+}
+
+.chain-ball-1 {
+  left: 25px;
+  animation: chain-ball-bounce-1 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.chain-ball-2 {
+  left: 85px;
+  animation: chain-ball-bounce-2 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.chain-ball-3 {
+  left: 145px;
+  animation: chain-ball-bounce-3 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.chain-ball-4 {
+  left: 205px;
+  animation: chain-ball-bounce-4 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
 
 .chain-chomp {
   position: relative;
@@ -263,13 +302,52 @@ body {
   left: 90%;
 }
 
-/* Bounce animation */
-@keyframes bounce {
+.shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: calc(50vh - 200px);
+  width: 205px;
+  height: 20px;
+  background-color: var(--grey);
+  opacity: 0.2;
+  border-radius: 50%;
+  animation: shadow 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes chain-ball-bounce-1 {
+  from { transform:translate3d(0px,0px,0px);}
+  to { transform:translate3d(0px,2px,0px);}
+}
+
+@keyframes chain-ball-bounce-2 {
+  from { transform:translate3d(0px,0px,0px);}
+  to { transform:translate3d(0px,8px,0px);}
+}
+
+@keyframes chain-ball-bounce-3 {
+  from { transform:translate3d(0px,0px,0px);}
+  to { transform:translate3d(0px,16px,0px);}
+}
+
+@keyframes chain-ball-bounce-4 {
+  from { transform:translate3d(0px,0px,0px);}
+  to { transform:translate3d(0px,24px,0px);}
+}
+
+@keyframes chomp-bounce {
   from { transform:translate3d(0px,0px,0px);}
   to { transform:translate3d(0px,50px,0px);}
 }
 
-/* Eyes animation */
+@keyframes shadow {
+ from { transform: scale(0.5);}
+  to { transform: scale(1);}
+}
+
 @keyframes turn-face-left-right {
   0% {
     transform: none;
